@@ -1,20 +1,19 @@
-# deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python_app
+  name: pythonapp
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: python_app
+      app: pythonapp
   template:
     metadata:
       labels:
-      app: python_app
+        app: pythonapp
     spec:
       containers:
       - name: pythonapp
         image: colestar/hello.py:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
